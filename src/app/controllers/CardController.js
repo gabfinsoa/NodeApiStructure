@@ -7,9 +7,22 @@ class CardController {
     return res.json(cards);
   }
 
-  show() {}
+  async show(req, res) {
+    const card = await Card.findByPk(req.params.id);
+    return res.json(card);
+  }
 
-  store() {}
+  async store(req, res) {
+    const { title, content } = req.body;
+
+    const card = await Card.create({
+      id: 5,
+      title,
+      content,
+    });
+
+    res.json(card);
+  }
 
   update() {}
 
