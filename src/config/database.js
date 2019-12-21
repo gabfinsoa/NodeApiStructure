@@ -1,0 +1,12 @@
+module.exports = {
+  url: process.env.DATABASE_URL,
+  define: {
+    timestamp: true,
+    underscored: true,
+    underscoredAll: true,
+  },
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: true,
+  },
+};
